@@ -1,0 +1,24 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CPF.
+      *******************************
+      *AREA DE COMENTARIOS - REMARKS
+      *AUTHOR = GABRIELLE NUNES
+      *OBJETIVO: RECEBER CPF DO USUÁRIO
+      *E IMPRIMIR FORMATADO
+      *DATA = 25/08/2021
+      *******************************
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+             DECIMAL-POINT IS COMMA.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       77 WRK-CPF    PIC 9(11) VALUE ZEROS.
+       77 WRK-CPF-ED PIC ZZZ.ZZZ.ZZ9/99 VALUE ZEROS.
+       PROCEDURE DIVISION.
+           ACCEPT WRK-CPF FROM CONSOLE.
+      ************MOSTRA DADOS ********
+           DISPLAY 'CPF: ' WRK-CPF.
+           MOVE WRK-CPF TO WRK-CPF-ED.
+           DISPLAY 'CPF FORMATADO: ' WRK-CPF-ED.
+           STOP RUN.

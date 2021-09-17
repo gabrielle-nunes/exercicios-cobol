@@ -1,0 +1,29 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. MEDIA-VENDAS.
+      *******************************
+      *AREA DE COMENTARIOS - REMARKS
+      *AUTHOR = GABRIELLE NUNES
+      *OBJETIVO: MÉDIA DE DUAS VENDAS
+      *DATA = 25/08/2021
+      *******************************
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       77 WRK-VEN1     PIC 9(03)V99    VALUE ZEROS.
+       77 WRK-VEN2     PIC 9(03)V99    VALUE ZEROS.
+       77 WRK-RESUL    PIC 9(04)V99    VALUE ZEROS.
+       77 WRK-RESUL-ED PIC $ZZZ.ZZ9,99 VALUE ZEROS.
+       PROCEDURE DIVISION.
+           ACCEPT WRK-VEN1 FROM CONSOLE.
+           ACCEPT WRK-VEN2 FROM CONSOLE.
+           DISPLAY '==========================='.
+      *******SOMA
+           ADD WRK-VEN1 WRK-VEN2 TO WRK-RESUL.
+      *******EXPRESSÃO (MÉDIA)
+           COMPUTE WRK-RESUL = (WRK-VEN1 + WRK-VEN2)/2.
+           MOVE WRK-RESUL TO WRK-RESUL-ED.
+           DISPLAY 'MEDIA DAS DUAS VENDAS: ' WRK-RESUL-ED.
+             STOP RUN.
